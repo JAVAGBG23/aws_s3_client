@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import Resizer from "react-image-file-resizer";
 import axios from "axios";
 
@@ -48,10 +47,11 @@ function App() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div className="column">
+      <form className="img-form" onSubmit={handleSubmit}>
+        <div className="form-container">
           <label>Title</label>
           <input
+            className="form-input"
             type="text"
             name="title"
             value={values.title}
@@ -60,9 +60,10 @@ function App() {
             }
           />
         </div>
-        <div className="column">
+        <div className="form-container">
           <label>Description</label>
           <input
+            className="form-input"
             type="text"
             name="description"
             value={values.description}
@@ -71,7 +72,7 @@ function App() {
             }
           />
         </div>
-        <div className="column">
+        <div className="file-input">
           <label>
             {uploadButtonText}
             <input
