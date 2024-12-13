@@ -12,6 +12,7 @@ function App() {
   const [image, setImage] = useState({});
 
   const handleImage = (e) => {
+    e.preventDefault();
     let file = e.target.files[0];
     setUploadButtonText(file.name);
     setValues({ ...values, loading: true });
